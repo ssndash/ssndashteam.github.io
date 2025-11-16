@@ -1,20 +1,23 @@
 /* Стиль раннего Интернета! */
 
+/* -- СВЕТЛАЯ ТЕМА (по умолчанию) -- */
 body {
-    font-family: 'Times New Roman', Times, serif; /* Классический шрифт с засечками */
+    font-family: 'Times New Roman', Times, serif;
     background-color: #C0C0C0; /* Серебряный фон, как в Windows 95 */
     color: #000000;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    max-width: 800px; /* Ограничиваем ширину, как на старых мониторах */
+    max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background-color: #FFFFFF; /* Белый "лист" */
     border: 2px solid #000000;
     box-shadow: 5px 5px 0px #808080; /* "3D" эффект */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 h1 {
@@ -28,22 +31,19 @@ h2 {
     border-bottom: 2px dotted #000000;
 }
 
-/* Стандартные цвета ссылок, которые все забыли */
 a {
     color: #0000FF; /* Синяя ссылка */
 }
-
 a:visited {
     color: #800080; /* Фиолетовая посещенная ссылка */
 }
-
 a:hover {
     color: #FF0000; /* Красная при наведении */
 }
 
 img {
     display: block;
-    margin: 15px auto; /* Центрируем GIF */
+    margin: 15px auto;
     max-width: 100%;
 }
 
@@ -51,4 +51,97 @@ img {
     text-align: center;
     font-size: 0.8em;
     margin-top: 20px;
+}
+
+/* -- СТИЛИ ДЛЯ НОВЫХ ЭЛЕМЕНТОВ -- */
+
+/* Кнопка переключения темы */
+.theme-switcher {
+    display: block;
+    margin: 0 auto 15px auto;
+    padding: 5px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    background-color: #C0C0C0; /* Фон Windows */
+    border: 2px outset #FFFFFF; /* 3D-кнопка */
+    cursor: pointer;
+}
+.theme-switcher:active {
+    border-style: inset;
+}
+
+/* Таблицы */
+.retro-table {
+    width: 100%;
+    border-collapse: collapse; /* Классические рамки */
+    margin-bottom: 20px;
+}
+.retro-table td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 33.33%;
+}
+
+/* Заглушка для аватара */
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #EEEEEE;
+    border: 1px dashed #000000;
+    margin: 0 auto 10px auto;
+    /* Центрирование текста-заглушки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    color: #555;
+}
+
+/* -- ТЕМНАЯ ТЕМА -- */
+body.dark-mode {
+    background-color: #000000;
+    color: #00FF00; /* Классический зеленый "терминал" */
+}
+
+body.dark-mode .container {
+    background-color: #1a1a1a;
+    border-color: #00FF00;
+    box-shadow: 5px 5px 0px #005500;
+}
+
+body.dark-mode h1 {
+    color: #FFFF00; /* Желтый */
+}
+
+body.dark-mode h2 {
+    color: #FF00FF; /* Маджента */
+    border-bottom: 2px dotted #00FF00;
+}
+
+body.dark-mode a {
+    color: #00FFFF; /* Голубой */
+}
+body.dark-mode a:visited {
+    color: #FF00FF; /* Маджента */
+}
+body.dark-mode a:hover {
+    color: #FFFFFF;
+}
+
+body.dark-mode .theme-switcher {
+    background-color: #333333;
+    color: #00FF00;
+    border-color: #555555;
+}
+
+body.dark-mode .retro-table td {
+    border-color: #00FF00;
+}
+
+body.dark-mode .avatar-placeholder {
+    background-color: #333333;
+    border-color: #00FF00;
+    color: #AAAAAA;
 }
