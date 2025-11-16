@@ -9,6 +9,8 @@
 <body>
 
     <div class="container">
+        <button id="theme-toggle" class="theme-switcher">Переключить Тему</button>
+        
         <marquee>Добро пожаловать на мой сайт! Он все еще в разработке!</marquee>
 
         <h1>✨ Привет! Это моя страничка! ✨</h1>
@@ -27,6 +29,70 @@
             <li><a href="https://ssndash.github.io/">SSNDash WebSite</a> - основноый сайт.</li>
         </ul>
 
+        <h2>Наша Команда</h2>
+        <table class="retro-table">
+            <tr>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>tvrshk</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>Timofya</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>ks51</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>Acquarbinka</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>letexe</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">AVATAR</div>
+                    <p>guga</p>
+                </td>
+            </tr>
+        </table>
+        
+        <h2>Наши Продукты</h2>
+        <table class="retro-table">
+            <tr>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 1</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 2</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 3</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 4</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 5</p>
+                </td>
+                <td>
+                    <div class="avatar-placeholder">ICON</div>
+                    <p>Template 6</p>
+                </td>
+            </tr>
+        </table>
+        
         <hr>
 
         <div class="footer">
@@ -38,6 +104,29 @@
         </div>
 
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // 1. Проверяем, есть ли сохраненная тема в localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+        }
+
+        // 2. Вешаем обработчик на кнопку
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // 3. Сохраняем выбор пользователя
+            let theme = 'light-mode'; // По умолчанию
+            if (body.classList.contains('dark-mode')) {
+                theme = 'dark-mode';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 
 </body>
 </html>
