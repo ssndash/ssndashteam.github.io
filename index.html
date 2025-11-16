@@ -99,8 +99,7 @@
             <p>не Copyright © 2025 SSNdash</p>
             <img src="https://blob.gifcities.org/gifcities/CU3UCZC5FQZCE43A5KJAJZAWQNOZENDR.gif" alt="Работает лучше с Internet Explorer!">
             
-            <p>Вы посетитель номер:</p>
-            <img src="https://hits.seeyoufarm.com/api/count/icon.svg?url=https%3A%2F%2F[YOUR-USERNAME].github.io" alt="Счетчик посещений">
+            <div id="visitorCounter">Идёт подсчёт...</div>
         </div>
 
     </div>
@@ -126,6 +125,32 @@
             }
             localStorage.setItem('theme', theme);
         });
+        // Функция для обновления счетчика
+    function updateCounter() {
+        const counterElement = document.getElementById('visitorCounter');
+        
+        // Генерируем случайное число от 0 до 999
+        let randomValue = Math.floor(Math.random() * 1000);
+        
+        // Определяем, что показывать, с разной вероятностью
+        if (randomValue === 777) { // Самый редкий шанс (~0.1%)
+            counterElement.innerHTML = 'SSNDash - Наше всё!';
+            counterElement.style.color = '#ff0000';
+            counterElement.style.fontWeight = 'normal';
+        } else {
+            // Генерируем "реалистичное" число посетителей от 1 до 500
+            let visitorCount = Math.floor(Math.random() * 500) + 1;
+            counterElement.innerHTML = `<strong>Вы посетитель №${visitorCount}</strong>`;
+            counterElement.style.color = '';
+            counterElement.style.fontWeight = 'normal';
+        }
+    }
+    
+    // Обновляем счетчик сразу при загрузке
+    updateCounter();
+    
+    // Можно также обновлять его периодически (например, каждые 10 секунд)
+    setInterval(updateCounter, 10000);
     </script>
 
 </body>
