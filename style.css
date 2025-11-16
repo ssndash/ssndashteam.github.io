@@ -1,0 +1,54 @@
+/* Стиль раннего Интернета! */
+
+body {
+    font-family: 'Times New Roman', Times, serif; /* Классический шрифт с засечками */
+    background-color: #C0C0C0; /* Серебряный фон, как в Windows 95 */
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px; /* Ограничиваем ширину, как на старых мониторах */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF; /* Белый "лист" */
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 0px #808080; /* "3D" эффект */
+}
+
+h1 {
+    color: #0000FF; /* Ярко-синий заголовок */
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #FF0000; /* Ярко-красный */
+    border-bottom: 2px dotted #000000;
+}
+
+/* Стандартные цвета ссылок, которые все забыли */
+a {
+    color: #0000FF; /* Синяя ссылка */
+}
+
+a:visited {
+    color: #800080; /* Фиолетовая посещенная ссылка */
+}
+
+a:hover {
+    color: #FF0000; /* Красная при наведении */
+}
+
+img {
+    display: block;
+    margin: 15px auto; /* Центрируем GIF */
+    max-width: 100%;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
