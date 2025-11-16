@@ -31,6 +31,7 @@ h2 {
     border-bottom: 2px dotted #000000;
 }
 
+/* Стандартные цвета ссылок */
 a {
     color: #0000FF; /* Синяя ссылка */
 }
@@ -55,10 +56,17 @@ img {
 
 /* -- СТИЛИ ДЛЯ НОВЫХ ЭЛЕМЕНТОВ -- */
 
-/* Кнопка переключения темы */
+/* Контейнер для кнопок */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Расстояние между кнопками */
+    margin-bottom: 15px;
+}
+
+/* Кнопки темы и языка */
 .theme-switcher {
-    display: block;
-    margin: 0 auto 15px auto;
+    margin: 0; /* Убираем авто-отступ, т.к. теперь во flex */
     padding: 5px 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
@@ -84,6 +92,16 @@ img {
     width: 33.33%;
 }
 
+/* Ссылки внутри таблиц (для имен и продуктов) */
+.retro-table a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок-имен */
+    font-weight: bold;
+}
+.retro-table a:hover {
+    text-decoration: underline; /* Показываем при наведении */
+}
+
+
 /* Заглушка для аватара */
 .avatar-placeholder {
     width: 80px;
@@ -91,7 +109,6 @@ img {
     background-color: #EEEEEE;
     border: 1px dashed #000000;
     margin: 0 auto 10px auto;
-    /* Центрирование текста-заглушки */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,6 +137,7 @@ body.dark-mode h2 {
     border-bottom: 2px dotted #00FF00;
 }
 
+/* Ссылки в темной теме */
 body.dark-mode a {
     color: #00FFFF; /* Голубой */
 }
@@ -130,6 +148,7 @@ body.dark-mode a:hover {
     color: #FFFFFF;
 }
 
+/* Кнопки в темной теме */
 body.dark-mode .theme-switcher {
     background-color: #333333;
     color: #00FF00;
